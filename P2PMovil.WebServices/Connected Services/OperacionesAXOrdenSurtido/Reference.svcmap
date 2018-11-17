@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="40835408-7979-4f04-b199-eaff6b0388bb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.101.52/OperacionesAX/OperacionesAXOrdenSurtido.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="OperacionesAXOrdenSurtido.xsd" MetadataType="Schema" ID="438beab2-9a09-4fae-8ffa-c9a1654687d3" SourceId="1" SourceUrl="http://192.168.101.52/OperacionesAX/OperacionesAXOrdenSurtido.svc?xsd=xsd1" />
+    <MetadataFile FileName="OperacionesAXOrdenSurtido1.xsd" MetadataType="Schema" ID="85f7c7a6-00c0-4d30-b5ce-2cdbfafd288c" SourceId="1" SourceUrl="http://192.168.101.52/OperacionesAX/OperacionesAXOrdenSurtido.svc?xsd=xsd0" />
+    <MetadataFile FileName="OperacionesAXOrdenSurtido.wsdl" MetadataType="Wsdl" ID="a335c489-0940-4830-9065-ac64a97c2455" SourceId="1" SourceUrl="http://192.168.101.52/OperacionesAX/OperacionesAXOrdenSurtido.svc?wsdl" />
+    <MetadataFile FileName="OperacionesAXOrdenSurtido.disco" MetadataType="Disco" ID="ba2aa701-10d8-4ef2-826c-6affe0f9c236" SourceId="1" SourceUrl="http://192.168.101.52/OperacionesAX/OperacionesAXOrdenSurtido.svc?disco" />
+    <MetadataFile FileName="OperacionesAXOrdenSurtido2.xsd" MetadataType="Schema" ID="154e9539-105b-4690-90b7-1911223c0baa" SourceId="1" SourceUrl="http://192.168.101.52/OperacionesAX/OperacionesAXOrdenSurtido.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ContenedorDatos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Contenedor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Lineas" nillable="true" type="tns:ArrayOfContenedorProducto" />
+      <xs:element minOccurs="0" name="Partida" type="xs:int" />
+      <xs:element minOccurs="0" name="Sello1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sello2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WHSContainerId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WHSContainerTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WHSShipmentId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContenedorDatos" nillable="true" type="tns:ContenedorDatos" />
+  <xs:complexType name="ArrayOfContenedorProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContenedorProducto" nillable="true" type="tns:ContenedorProducto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContenedorProducto" nillable="true" type="tns:ArrayOfContenedorProducto" />
+  <xs:complexType name="ContenedorProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ItemId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Qty" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SecurityCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContenedorProducto" nillable="true" type="tns:ContenedorProducto" />
+</xs:schema>

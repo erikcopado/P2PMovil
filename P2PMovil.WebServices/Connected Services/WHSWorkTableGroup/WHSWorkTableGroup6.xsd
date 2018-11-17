@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://srvaosdyn02:8102/DynamicsAx/Services/WHSWorkTableGroup?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" />
+  <xs:complexType name="AxWHSWorkLine">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q1:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="inventBatchId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="itemBarCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="itemId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="licensePlateId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="qty" type="xs:decimal" />
+          <xs:element minOccurs="0" name="unit" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="workId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AxWHSWorkLine" nillable="true" type="tns:AxWHSWorkLine" />
+  <xs:complexType name="AxWHSWorkTable">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q2:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="WHSOrderNum" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="result" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="whsWorkId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="whsWorkLineList" nillable="true" type="tns:ArrayOfAxWHSWorkLine" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AxWHSWorkTable" nillable="true" type="tns:AxWHSWorkTable" />
+  <xs:complexType name="ArrayOfAxWHSWorkLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AxWHSWorkLine" nillable="true" type="tns:AxWHSWorkLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAxWHSWorkLine" nillable="true" type="tns:ArrayOfAxWHSWorkLine" />
+  <xs:complexType name="ArrayOfAxWHSWorkTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AxWHSWorkTable" nillable="true" type="tns:AxWHSWorkTable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAxWHSWorkTable" nillable="true" type="tns:ArrayOfAxWHSWorkTable" />
+</xs:schema>

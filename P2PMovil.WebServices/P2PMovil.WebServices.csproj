@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E73017D1-736D-45D9-933B-AD9222B1FCEB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>P2PMovil.WebServices</RootNamespace>
+    <AssemblyName>P2PMovil.WebServices</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\OperacionesAXContenedor\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\OperacionesAXOrdenSurtido\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WHSCloseContainerGroup\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WHSWorkTableGroup\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Connected Services\OperacionesAXContenedor\OperacionesAXContenedor.wsdl" />
+    <None Include="Connected Services\OperacionesAXContenedor\OperacionesAXContenedor.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OperacionesAXContenedor\OperacionesAXContenedor1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OperacionesAXContenedor\OperacionesAXContenedor2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OperacionesAXContenedor\P2PMovil.WebServices.OperacionesAXContenedor.ContenedorDatos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\OperacionesAXOrdenSurtido\OperacionesAXOrdenSurtido.wsdl" />
+    <None Include="Connected Services\OperacionesAXOrdenSurtido\OperacionesAXOrdenSurtido.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OperacionesAXOrdenSurtido\OperacionesAXOrdenSurtido1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OperacionesAXOrdenSurtido\OperacionesAXOrdenSurtido2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OperacionesAXOrdenSurtido\P2PMovil.WebServices.OperacionesAXOrdenSurtido.OrdenSurtido.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WHSCloseContainerGroup\P2PMovil.WebServices.WHSCloseContainerGroup.AxWHSCloseContainerServiceCreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WHSCloseContainerGroup\P2PMovil.WebServices.WHSCloseContainerGroup.AxWHSContainerTable.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WHSCloseContainerGroup\WHSCloseContainerGroup.wsdl" />
+    <None Include="Connected Services\WHSCloseContainerGroup\WHSCloseContainerGroup.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WHSCloseContainerGroup\WHSCloseContainerGroup1.wsdl" />
+    <None Include="Connected Services\WHSCloseContainerGroup\WHSCloseContainerGroup1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WHSCloseContainerGroup\WHSCloseContainerGroup2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WHSCloseContainerGroup\WHSCloseContainerGroup3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WHSCloseContainerGroup\WHSCloseContainerGroup4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WHSCloseContainerGroup\WHSCloseContainerGroup5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WHSCloseContainerGroup\WHSCloseContainerGroup6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WHSCloseContainerGroup\WHSCloseContainerGroup7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WHSWorkTableGroup\P2PMovil.WebServices.WHSWorkTableGroup.AxWHSWorkTable.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WHSWorkTableGroup\P2PMovil.WebServices.WHSWorkTableGroup.AxWHSWorkTableServiceInsertResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WHSWorkTableGroup\WHSWorkTableGroup.wsdl" />
+    <None Include="Connected Services\WHSWorkTableGroup\WHSWorkTableGroup.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WHSWorkTableGroup\WHSWorkTableGroup1.wsdl" />
+    <None Include="Connected Services\WHSWorkTableGroup\WHSWorkTableGroup1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WHSWorkTableGroup\WHSWorkTableGroup2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WHSWorkTableGroup\WHSWorkTableGroup3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WHSWorkTableGroup\WHSWorkTableGroup4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WHSWorkTableGroup\WHSWorkTableGroup5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WHSWorkTableGroup\WHSWorkTableGroup6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WHSWorkTableGroup\WHSWorkTableGroup7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\OperacionesAXContenedor\" />
+    <WCFMetadataStorage Include="Connected Services\OperacionesAXOrdenSurtido\" />
+    <WCFMetadataStorage Include="Connected Services\WHSCloseContainerGroup\" />
+    <WCFMetadataStorage Include="Connected Services\WHSWorkTableGroup\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\OperacionesAXOrdenSurtido\OperacionesAXOrdenSurtido.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\OperacionesAXOrdenSurtido\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\OperacionesAXOrdenSurtido\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\OperacionesAXOrdenSurtido\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WHSWorkTableGroup\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WHSWorkTableGroup\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WHSWorkTableGroup\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\OperacionesAXContenedor\OperacionesAXContenedor.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\OperacionesAXContenedor\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\OperacionesAXContenedor\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\OperacionesAXContenedor\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WHSCloseContainerGroup\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WHSCloseContainerGroup\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WHSCloseContainerGroup\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

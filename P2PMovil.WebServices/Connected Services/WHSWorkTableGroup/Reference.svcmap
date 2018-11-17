@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1a0bff1d-d033-4d43-9c65-7d94c29cb143" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://SRVAOSDYN02:8102/DynamicsAx/Services/WHSWorkTableGroup" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WHSWorkTableGroup.xsd" MetadataType="Schema" ID="9916f772-c0a8-4a37-a23c-1b8b0c4b01a1" SourceId="1" SourceUrl="http://srvaosdyn02:8102/DynamicsAx/Services/WHSWorkTableGroup?xsd=xsd4" />
+    <MetadataFile FileName="WHSWorkTableGroup1.xsd" MetadataType="Schema" ID="e480c507-5e6c-4652-a6e4-d3dbea78f19b" SourceId="1" SourceUrl="http://srvaosdyn02:8102/DynamicsAx/Services/WHSWorkTableGroup?xsd=xsd7" />
+    <MetadataFile FileName="WHSWorkTableGroup.wsdl" MetadataType="Wsdl" ID="506829c4-f790-4dce-b42d-b349bf772290" SourceId="1" SourceUrl="http://srvaosdyn02:8102/DynamicsAx/Services/WHSWorkTableGroup" />
+    <MetadataFile FileName="WHSWorkTableGroup2.xsd" MetadataType="Schema" ID="0df47a54-3fa5-4362-8356-9f479109da89" SourceId="1" SourceUrl="http://srvaosdyn02:8102/DynamicsAx/Services/WHSWorkTableGroup?xsd=xsd0" />
+    <MetadataFile FileName="WHSWorkTableGroup3.xsd" MetadataType="Schema" ID="def394ce-07c9-4398-a926-53aab2857a8d" SourceId="1" SourceUrl="http://srvaosdyn02:8102/DynamicsAx/Services/WHSWorkTableGroup?xsd=xsd3" />
+    <MetadataFile FileName="WHSWorkTableGroup4.xsd" MetadataType="Schema" ID="19c68d31-2f49-4823-ac37-1232748b1188" SourceId="1" SourceUrl="http://srvaosdyn02:8102/DynamicsAx/Services/WHSWorkTableGroup?xsd=xsd2" />
+    <MetadataFile FileName="WHSWorkTableGroup5.xsd" MetadataType="Schema" ID="abdabbbb-602a-45dd-b50e-e030d91dd90b" SourceId="1" SourceUrl="http://srvaosdyn02:8102/DynamicsAx/Services/WHSWorkTableGroup?xsd=xsd5" />
+    <MetadataFile FileName="WHSWorkTableGroup1.wsdl" MetadataType="Wsdl" ID="bd1946ea-3374-4d54-9209-dbdea7d890cd" SourceId="1" SourceUrl="http://srvaosdyn02:8102/DynamicsAx/Services/WHSWorkTableGroup?wsdl=wsdl0" />
+    <MetadataFile FileName="WHSWorkTableGroup6.xsd" MetadataType="Schema" ID="4b421d67-31b8-4fe4-99b3-4d1300f3eee3" SourceId="1" SourceUrl="http://srvaosdyn02:8102/DynamicsAx/Services/WHSWorkTableGroup?xsd=xsd1" />
+    <MetadataFile FileName="WHSWorkTableGroup7.xsd" MetadataType="Schema" ID="28582dac-04fe-4906-84ca-e108c5c2641f" SourceId="1" SourceUrl="http://srvaosdyn02:8102/DynamicsAx/Services/WHSWorkTableGroup?xsd=xsd6" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

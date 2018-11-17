@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bad753e5-6bfe-44a7-9a03-6b2889b9c966" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.101.52/OperacionesAX/OperacionesAXContenedor.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="OperacionesAXContenedor.xsd" MetadataType="Schema" ID="d24c0dcd-ce24-4e69-a89d-76a029a1af83" SourceId="1" SourceUrl="http://192.168.101.52/OperacionesAX/OperacionesAXContenedor.svc?xsd=xsd0" />
+    <MetadataFile FileName="OperacionesAXContenedor.disco" MetadataType="Disco" ID="21ed871a-8b92-47a6-a61a-55e7d1a699dd" SourceId="1" SourceUrl="http://192.168.101.52/OperacionesAX/OperacionesAXContenedor.svc?disco" />
+    <MetadataFile FileName="OperacionesAXContenedor.wsdl" MetadataType="Wsdl" ID="c206a44c-dd5e-4eb2-b3b2-fc3cd206d0fc" SourceId="1" SourceUrl="http://192.168.101.52/OperacionesAX/OperacionesAXContenedor.svc?wsdl" />
+    <MetadataFile FileName="OperacionesAXContenedor1.xsd" MetadataType="Schema" ID="ea472c5a-3388-4f76-b951-b47a8a8c8a39" SourceId="1" SourceUrl="http://192.168.101.52/OperacionesAX/OperacionesAXContenedor.svc?xsd=xsd2" />
+    <MetadataFile FileName="OperacionesAXContenedor2.xsd" MetadataType="Schema" ID="10128a67-4417-4cb5-ae83-8e369dca2cfd" SourceId="1" SourceUrl="http://192.168.101.52/OperacionesAX/OperacionesAXContenedor.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

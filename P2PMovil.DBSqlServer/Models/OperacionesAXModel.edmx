@@ -1,0 +1,1092 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="OperacionesAXModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="NUM_CLIENTE" />
+            <PropertyRef Name="CADENA_DISTRI" />
+          </Key>
+          <Property Name="NUM_CLIENTE" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="NOMBRE_CTE" Type="varchar" MaxLength="85" />
+          <Property Name="CLAVE_BAJA" Type="char" MaxLength="2" />
+          <Property Name="F_ALTA_CTE" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="F_BAJA_CTE" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="CADENA_DISTRI" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="TIPO_CLIENTE" Type="decimal" Precision="4" Scale="0" />
+          <Property Name="TERRITORIO" Type="decimal" Precision="2" Scale="0" />
+          <Property Name="REGION" Type="decimal" Precision="2" Scale="0" />
+          <Property Name="CIUDAD" Type="decimal" Precision="4" Scale="0" />
+          <Property Name="CRED_ALTO" Type="varchar" MaxLength="20" />
+          <Property Name="F_CAPTURA" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="DIMFINA03" Type="varchar" MaxLength="8" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OperacionesAX.dbo.Control_Cajas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Control_Cajas">
+          <Key>
+            <PropertyRef Name="NUM_ORDEN" />
+          </Key>
+          <Property Name="NUM_ORDEN" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="CAJAS" Type="numeric" Precision="4" Scale="0" />
+          <Property Name="T_CAJAS" Type="numeric" Precision="4" Scale="0" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OperacionesAX.dbo.Control_Imp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Control_Imp">
+          <Key>
+            <PropertyRef Name="PUERTO" />
+          </Key>
+          <Property Name="PUERTO" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="NUM_ORDEN" Type="varchar" MaxLength="25" />
+          <Property Name="CAJAS" Type="numeric" Precision="4" Scale="0" />
+          <Property Name="CAJAS_ANT" Type="numeric" Precision="4" Scale="0" />
+          <Property Name="FLAG_B" Type="nchar" MaxLength="2" />
+          <Property Name="SELLO1" Type="varchar" MaxLength="20" />
+          <Property Name="SELLO2" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="CtlPedidos">
+          <Key>
+            <PropertyRef Name="NUM_ORDEN" />
+            <PropertyRef Name="NUM_PED_CIA" />
+          </Key>
+          <Property Name="CustAccount" Type="varchar" MaxLength="20" />
+          <Property Name="ShipmentId" Type="varchar" MaxLength="20" />
+          <Property Name="PurchOrderFormNum" Type="varchar" MaxLength="20" />
+          <Property Name="OrderNum" Type="varchar" MaxLength="20" />
+          <Property Name="WorkId" Type="varchar" MaxLength="20" />
+          <Property Name="InventLocationId" Type="varchar" MaxLength="10" />
+          <Property Name="SalesStatus" Type="int" />
+          <Property Name="createdDateTime" Type="datetime" />
+          <Property Name="ShippingDateRequested" Type="datetime" />
+          <Property Name="LiberacionDateTime" Type="datetime" />
+          <Property Name="WNUM_PED_CTE" Type="varchar" MaxLength="20" />
+          <Property Name="NUM_ORDEN" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="NUM_PED_CIA" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="NUM_FACTURA" Type="varchar" MaxLength="8" />
+          <Property Name="FOLIO" Type="decimal" Precision="6" Scale="0" />
+          <Property Name="NUM_CLIENTE" Type="varchar" MaxLength="25" />
+          <Property Name="F_ENVIO_SURT" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="HORA_SURTIDO" Type="decimal" Precision="4" Scale="0" />
+          <Property Name="ESTADO_PEDIDO" Type="varchar" MaxLength="10" />
+          <Property Name="F_CAPTURA" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="F_PEDIDO" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="F_PROGRAMADA" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="FECHA_I_SUR" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="HORA_I_SUR" Type="numeric" Precision="4" Scale="0" />
+          <Property Name="FECHA_F_SUR" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="HORA_F_SUR" Type="numeric" Precision="4" Scale="0" />
+          <Property Name="F_RECHAZO" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="F_VARIAS_01" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="F_VARIAS_03" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="F_VARIAS_02" Type="decimal" Precision="8" Scale="0" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OperacionesAX.dbo.Det_Error' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Det_Error">
+          <Key>
+            <PropertyRef Name="ORDEN_PROD" />
+          </Key>
+          <Property Name="OR_HOJA" Type="varchar" MaxLength="40" />
+          <Property Name="ORDEN_PROD" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NUM_ORDEN" Type="varchar" MaxLength="25" />
+          <Property Name="NUM_PRODUCTO" Type="varchar" MaxLength="20" />
+          <Property Name="SURTIDOR" Type="varchar" MaxLength="20" />
+          <Property Name="USUARIO" Type="varchar" MaxLength="20" />
+          <Property Name="PUERTO" Type="nchar" MaxLength="4" />
+          <Property Name="CLAVE_MOVTO" Type="nchar" MaxLength="2" />
+          <Property Name="UNI_SCANEADA" Type="numeric" Precision="6" Scale="0" />
+          <Property Name="F_SURTIDO" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="CAJAS" Type="numeric" Precision="4" Scale="0" />
+          <Property Name="CODIGO_SEC" Type="nchar" MaxLength="16" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OperacionesAX.dbo.Det_Hoja' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Det_Hoja">
+          <Key>
+            <PropertyRef Name="OR_HOJA" />
+          </Key>
+          <Property Name="OR_HOJA" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="NUM_ORDEN" Type="varchar" MaxLength="25" />
+          <Property Name="HOJA" Type="int" />
+          <Property Name="FECHA_SUR" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="HORA_I_SUR" Type="numeric" Precision="4" Scale="0" />
+          <Property Name="HORA_F_SUR" Type="numeric" Precision="4" Scale="0" />
+          <Property Name="SURTIDOR" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Det_Orden">
+          <Key>
+            <PropertyRef Name="ORDEN_PROD" />
+          </Key>
+          <Property Name="CustAccount" Type="varchar" MaxLength="20" />
+          <Property Name="WorkId" Type="varchar" MaxLength="20" />
+          <Property Name="WMSLocationId" Type="varchar" MaxLength="10" />
+          <Property Name="ItemId" Type="varchar" MaxLength="20" />
+          <Property Name="LP" Type="varchar" MaxLength="20" />
+          <Property Name="QtyWork" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="WorkType" Type="int" />
+          <Property Name="WorkStatus" Type="int" />
+          <Property Name="NUM_CLIENTE" Type="varchar" MaxLength="25" />
+          <Property Name="NUM_ORDEN" Type="varchar" MaxLength="25" />
+          <Property Name="ORDEN_PROD" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UNI_PEDIDAS" Type="numeric" Precision="6" Scale="0" />
+          <Property Name="UNI_SURTIDA" Type="numeric" Precision="6" Scale="0" />
+          <Property Name="UNI_SCANEADA" Type="numeric" Precision="6" Scale="0" />
+          <Property Name="UNI_DIFE" Type="numeric" Precision="6" Scale="0" />
+          <Property Name="CLAVE_MOVTO" Type="nchar" MaxLength="2" />
+          <Property Name="CLAVE_BAJA" Type="nchar" MaxLength="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OperacionesAX.dbo.Det_Scaner' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Det_Scaner">
+          <Key>
+            <PropertyRef Name="NUM_ORDEN" />
+            <PropertyRef Name="NUM_PRODUCTO" />
+          </Key>
+          <Property Name="NUM_ORDEN" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="BARCODE" Type="nchar" MaxLength="16" />
+          <Property Name="NUM_PRODUCTO" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="UNI_SCANEADA" Type="numeric" Precision="6" Scale="0" />
+          <Property Name="CLAVE_MOVTO" Type="nchar" MaxLength="2" />
+          <Property Name="CLAVE_BAJA" Type="nchar" MaxLength="2" />
+          <Property Name="SURTIDOR" Type="varchar" MaxLength="20" />
+          <Property Name="HORA_I_SUR" Type="numeric" Precision="4" Scale="0" />
+          <Property Name="HORA_F_SUR" Type="numeric" Precision="4" Scale="0" />
+          <Property Name="FECHA_SUR" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="HOJA" Type="numeric" Precision="4" Scale="0" />
+          <Property Name="F_SURTIDO" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="HORA_SURTIDO" Type="numeric" Precision="4" Scale="0" />
+          <Property Name="USUARIO" Type="varchar" MaxLength="20" />
+          <Property Name="PUERTO" Type="nchar" MaxLength="4" />
+          <Property Name="CAJAS" Type="numeric" Precision="4" Scale="0" />
+          <Property Name="T_CAJAS" Type="numeric" Precision="4" Scale="0" />
+          <Property Name="CODIGO_SEC" Type="nchar" MaxLength="16" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OperacionesAX.dbo.DetallePedido' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DetallePedido">
+          <Key>
+            <PropertyRef Name="DetallePedidoId" />
+            <PropertyRef Name="WorkId" />
+            <PropertyRef Name="InventLocationId" />
+            <PropertyRef Name="WMSLocationId" />
+            <PropertyRef Name="ItemId" />
+            <PropertyRef Name="inventBatchId" />
+            <PropertyRef Name="LP" />
+            <PropertyRef Name="NUM_PED_CIA" />
+            <PropertyRef Name="LLAVE_LOC" />
+            <PropertyRef Name="MARCA" />
+          </Key>
+          <Property Name="DetallePedidoId" Type="int" Nullable="false" />
+          <Property Name="CustAccount" Type="varchar" MaxLength="20" />
+          <Property Name="ShipmentId" Type="varchar" MaxLength="20" />
+          <Property Name="PurchOrderFormNum" Type="varchar" MaxLength="20" />
+          <Property Name="OrderNum" Type="varchar" MaxLength="20" />
+          <Property Name="WorkId" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="InventLocationId" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="SalesStatus" Type="int" />
+          <Property Name="createdDateTime" Type="datetime" />
+          <Property Name="ShippingDateRequested" Type="datetime" />
+          <Property Name="LiberacionDateTime" Type="datetime" />
+          <Property Name="TransDateTime" Type="datetime" />
+          <Property Name="WMSLocationId" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ItemId" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="inventBatchId" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="LP" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="QtyWork" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="WorkType" Type="int" />
+          <Property Name="WorkStatus" Type="int" />
+          <Property Name="NUM_PED_CIA" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="LLAVE_LOC" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="NUM_PRODUCTO" Type="varchar" MaxLength="20" />
+          <Property Name="UNI_PEDIDAS" Type="decimal" Precision="6" Scale="0" />
+          <Property Name="UNI_SURTIDA_SUG" Type="decimal" Precision="6" Scale="0" />
+          <Property Name="UNI_SURTIDA_REAL" Type="decimal" Precision="6" Scale="0" />
+          <Property Name="CLAVE_MOVTO" Type="char" MaxLength="2" />
+          <Property Name="CLAVE_BAJA" Type="char" MaxLength="2" />
+          <Property Name="MARCA" Type="varchar" MaxLength="16" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OperacionesAX.dbo.InicioSesion' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="InicioSesion">
+          <Key>
+            <PropertyRef Name="InicioSesionID" />
+            <PropertyRef Name="UsuarioID" />
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="HoraInicio" />
+            <PropertyRef Name="HoraTermino" />
+            <PropertyRef Name="MinutosDeSesion" />
+          </Key>
+          <Property Name="InicioSesionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UsuarioID" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="smalldatetime" Nullable="false" />
+          <Property Name="HoraInicio" Type="smalldatetime" Nullable="false" />
+          <Property Name="HoraTermino" Type="smalldatetime" Nullable="false" />
+          <Property Name="MinutosDeSesion" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orden_Contenedor">
+          <Key>
+            <PropertyRef Name="ORDEN_CAJA" />
+          </Key>
+          <Property Name="OrdenContenedorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ORDEN_CAJA" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="NUM_ORDEN" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="CAJAS" Type="int" Nullable="false" />
+          <Property Name="SELLO1" Type="varchar" MaxLength="20" />
+          <Property Name="SELLO2" Type="varchar" MaxLength="20" />
+          <Property Name="CONTENEDOR" Type="varchar" MaxLength="20" />
+          <Property Name="CONTENEDORID" Type="varchar" MaxLength="30" />
+          <Property Name="PESO_ESTIMADO" Type="decimal" Precision="8" Scale="3" />
+          <Property Name="PESO_REAL" Type="decimal" Precision="8" Scale="3" />
+          <Property Name="TARA" Type="decimal" Precision="8" Scale="3" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OperacionesAX.dbo.OrdenAsignada' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="OrdenAsignada">
+          <Key>
+            <PropertyRef Name="FOLIO_ASIGNADO" />
+            <PropertyRef Name="NUM_ORDEN" />
+            <PropertyRef Name="NUM_PED_CIA" />
+            <PropertyRef Name="USUARIO" />
+            <PropertyRef Name="STATUS" />
+            <PropertyRef Name="MARCA" />
+            <PropertyRef Name="TIPOSURTIDO" />
+          </Key>
+          <Property Name="FOLIO_ASIGNADO" Type="int" Nullable="false" />
+          <Property Name="NUM_ORDEN" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="NUM_PED_CIA" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="USUARIO" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="STATUS" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="MARCA" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="TIPOSURTIDO" Type="decimal" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="INICIOSURTIDO" Type="datetime" />
+          <Property Name="TERMINASURTIDO" Type="datetime" />
+          <Property Name="SUBSTATUS1" Type="varchar" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="ProdAntera">
+          <Key>
+            <PropertyRef Name="NUM_PRODUCTO" />
+          </Key>
+          <Property Name="CIA" Type="varchar" MaxLength="20" />
+          <Property Name="PROV" Type="nvarchar" MaxLength="2" />
+          <Property Name="LINEA" Type="decimal" Precision="2" Scale="0" />
+          <Property Name="GRUPO" Type="decimal" Precision="4" Scale="0" />
+          <Property Name="TIPO_ALMACEN" Type="nvarchar" MaxLength="10" />
+          <Property Name="SUBGRU" Type="decimal" Precision="2" Scale="0" />
+          <Property Name="SUBGRUPO" Type="decimal" Precision="2" Scale="0" />
+          <Property Name="AGRUP_VTAS" Type="decimal" Precision="4" Scale="0" />
+          <Property Name="BARCODE" Type="nvarchar" MaxLength="16" />
+          <Property Name="F_CAPTURA" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="CLAVE_BAJA" Type="nvarchar" MaxLength="2" />
+          <Property Name="NUM_PRODUCTO" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DESCRIP" Type="varchar" MaxLength="85" />
+          <Property Name="PRE_FACT_FRO" Type="decimal" Precision="7" Scale="0" />
+          <Property Name="PRE_PUB_FRO" Type="decimal" Precision="7" Scale="0" />
+          <Property Name="PRE_FACT" Type="decimal" Precision="7" Scale="0" />
+          <Property Name="PPUBSIVA" Type="decimal" Precision="7" Scale="0" />
+          <Property Name="PPUBCIVA" Type="decimal" Precision="7" Scale="0" />
+          <Property Name="FOB" Type="decimal" Precision="7" Scale="0" />
+          <Property Name="GTOSIMP" Type="decimal" Precision="7" Scale="0" />
+          <Property Name="COSTO" Type="decimal" Precision="7" Scale="0" />
+          <Property Name="DESCON" Type="varchar" MaxLength="4" />
+          <Property Name="TIPOPROD" Type="varchar" MaxLength="4" />
+          <Property Name="CODSEGU" Type="varchar" MaxLength="4" />
+          <Property Name="PESO" Type="decimal" Precision="7" Scale="0" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OperacionesAX.dbo.Surtidores' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Surtidores">
+          <Key>
+            <PropertyRef Name="UsuarioID" />
+            <PropertyRef Name="Usuario" />
+            <PropertyRef Name="Contrasena" />
+            <PropertyRef Name="NombreSurtidor" />
+            <PropertyRef Name="TipoSurtido" />
+          </Key>
+          <Property Name="UsuarioID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Usuario" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Contrasena" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="NombreSurtidor" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="TipoSurtido" Type="int" Nullable="false" />
+          <Property Name="NumEmpleado" Type="varchar" MaxLength="16" />
+          <Property Name="Activo" Type="bit" />
+          <Property Name="ScanerID" Type="int" />
+          <Property Name="AreaID" Type="int" />
+        </EntityType>
+        <Function Name="SumarizaEscaneo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NC" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="OperacionesAXModelStoreContainer">
+          <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CtlPedidos" EntityType="Self.CtlPedidos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Det_Orden" EntityType="Self.Det_Orden" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orden_Contenedor" EntityType="Self.Orden_Contenedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProdAntera" EntityType="Self.ProdAntera" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Control_Cajas" EntityType="Self.Control_Cajas" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Control_Cajas].[NUM_ORDEN] AS [NUM_ORDEN], 
+    [Control_Cajas].[CAJAS] AS [CAJAS], 
+    [Control_Cajas].[T_CAJAS] AS [T_CAJAS]
+    FROM [dbo].[Control_Cajas] AS [Control_Cajas]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Control_Imp" EntityType="Self.Control_Imp" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Control_Imp].[PUERTO] AS [PUERTO], 
+    [Control_Imp].[NUM_ORDEN] AS [NUM_ORDEN], 
+    [Control_Imp].[CAJAS] AS [CAJAS], 
+    [Control_Imp].[CAJAS_ANT] AS [CAJAS_ANT], 
+    [Control_Imp].[FLAG_B] AS [FLAG_B], 
+    [Control_Imp].[SELLO1] AS [SELLO1], 
+    [Control_Imp].[SELLO2] AS [SELLO2]
+    FROM [dbo].[Control_Imp] AS [Control_Imp]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Det_Error" EntityType="Self.Det_Error" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Det_Error].[OR_HOJA] AS [OR_HOJA], 
+    [Det_Error].[ORDEN_PROD] AS [ORDEN_PROD], 
+    [Det_Error].[NUM_ORDEN] AS [NUM_ORDEN], 
+    [Det_Error].[NUM_PRODUCTO] AS [NUM_PRODUCTO], 
+    [Det_Error].[SURTIDOR] AS [SURTIDOR], 
+    [Det_Error].[USUARIO] AS [USUARIO], 
+    [Det_Error].[PUERTO] AS [PUERTO], 
+    [Det_Error].[CLAVE_MOVTO] AS [CLAVE_MOVTO], 
+    [Det_Error].[UNI_SCANEADA] AS [UNI_SCANEADA], 
+    [Det_Error].[F_SURTIDO] AS [F_SURTIDO], 
+    [Det_Error].[CAJAS] AS [CAJAS], 
+    [Det_Error].[CODIGO_SEC] AS [CODIGO_SEC]
+    FROM [dbo].[Det_Error] AS [Det_Error]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Det_Hoja" EntityType="Self.Det_Hoja" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Det_Hoja].[OR_HOJA] AS [OR_HOJA], 
+    [Det_Hoja].[NUM_ORDEN] AS [NUM_ORDEN], 
+    [Det_Hoja].[HOJA] AS [HOJA], 
+    [Det_Hoja].[FECHA_SUR] AS [FECHA_SUR], 
+    [Det_Hoja].[HORA_I_SUR] AS [HORA_I_SUR], 
+    [Det_Hoja].[HORA_F_SUR] AS [HORA_F_SUR], 
+    [Det_Hoja].[SURTIDOR] AS [SURTIDOR]
+    FROM [dbo].[Det_Hoja] AS [Det_Hoja]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Det_Scaner" EntityType="Self.Det_Scaner" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Det_Scaner].[NUM_ORDEN] AS [NUM_ORDEN], 
+    [Det_Scaner].[BARCODE] AS [BARCODE], 
+    [Det_Scaner].[NUM_PRODUCTO] AS [NUM_PRODUCTO], 
+    [Det_Scaner].[UNI_SCANEADA] AS [UNI_SCANEADA], 
+    [Det_Scaner].[CLAVE_MOVTO] AS [CLAVE_MOVTO], 
+    [Det_Scaner].[CLAVE_BAJA] AS [CLAVE_BAJA], 
+    [Det_Scaner].[SURTIDOR] AS [SURTIDOR], 
+    [Det_Scaner].[HORA_I_SUR] AS [HORA_I_SUR], 
+    [Det_Scaner].[HORA_F_SUR] AS [HORA_F_SUR], 
+    [Det_Scaner].[FECHA_SUR] AS [FECHA_SUR], 
+    [Det_Scaner].[HOJA] AS [HOJA], 
+    [Det_Scaner].[F_SURTIDO] AS [F_SURTIDO], 
+    [Det_Scaner].[HORA_SURTIDO] AS [HORA_SURTIDO], 
+    [Det_Scaner].[USUARIO] AS [USUARIO], 
+    [Det_Scaner].[PUERTO] AS [PUERTO], 
+    [Det_Scaner].[CAJAS] AS [CAJAS], 
+    [Det_Scaner].[T_CAJAS] AS [T_CAJAS], 
+    [Det_Scaner].[CODIGO_SEC] AS [CODIGO_SEC]
+    FROM [dbo].[Det_Scaner] AS [Det_Scaner]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DetallePedido" EntityType="Self.DetallePedido" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DetallePedido].[DetallePedidoId] AS [DetallePedidoId], 
+    [DetallePedido].[CustAccount] AS [CustAccount], 
+    [DetallePedido].[ShipmentId] AS [ShipmentId], 
+    [DetallePedido].[PurchOrderFormNum] AS [PurchOrderFormNum], 
+    [DetallePedido].[OrderNum] AS [OrderNum], 
+    [DetallePedido].[WorkId] AS [WorkId], 
+    [DetallePedido].[InventLocationId] AS [InventLocationId], 
+    [DetallePedido].[SalesStatus] AS [SalesStatus], 
+    [DetallePedido].[createdDateTime] AS [createdDateTime], 
+    [DetallePedido].[ShippingDateRequested] AS [ShippingDateRequested], 
+    [DetallePedido].[LiberacionDateTime] AS [LiberacionDateTime], 
+    [DetallePedido].[TransDateTime] AS [TransDateTime], 
+    [DetallePedido].[WMSLocationId] AS [WMSLocationId], 
+    [DetallePedido].[ItemId] AS [ItemId], 
+    [DetallePedido].[inventBatchId] AS [inventBatchId], 
+    [DetallePedido].[LP] AS [LP], 
+    [DetallePedido].[QtyWork] AS [QtyWork], 
+    [DetallePedido].[WorkType] AS [WorkType], 
+    [DetallePedido].[WorkStatus] AS [WorkStatus], 
+    [DetallePedido].[NUM_PED_CIA] AS [NUM_PED_CIA], 
+    [DetallePedido].[LLAVE_LOC] AS [LLAVE_LOC], 
+    [DetallePedido].[NUM_PRODUCTO] AS [NUM_PRODUCTO], 
+    [DetallePedido].[UNI_PEDIDAS] AS [UNI_PEDIDAS], 
+    [DetallePedido].[UNI_SURTIDA_SUG] AS [UNI_SURTIDA_SUG], 
+    [DetallePedido].[UNI_SURTIDA_REAL] AS [UNI_SURTIDA_REAL], 
+    [DetallePedido].[CLAVE_MOVTO] AS [CLAVE_MOVTO], 
+    [DetallePedido].[CLAVE_BAJA] AS [CLAVE_BAJA], 
+    [DetallePedido].[MARCA] AS [MARCA]
+    FROM [dbo].[DetallePedido] AS [DetallePedido]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="InicioSesion" EntityType="Self.InicioSesion" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [InicioSesion].[InicioSesionID] AS [InicioSesionID], 
+    [InicioSesion].[UsuarioID] AS [UsuarioID], 
+    [InicioSesion].[Fecha] AS [Fecha], 
+    [InicioSesion].[HoraInicio] AS [HoraInicio], 
+    [InicioSesion].[HoraTermino] AS [HoraTermino], 
+    [InicioSesion].[MinutosDeSesion] AS [MinutosDeSesion]
+    FROM [dbo].[InicioSesion] AS [InicioSesion]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OrdenAsignada" EntityType="Self.OrdenAsignada" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [OrdenAsignada].[FOLIO_ASIGNADO] AS [FOLIO_ASIGNADO], 
+    [OrdenAsignada].[NUM_ORDEN] AS [NUM_ORDEN], 
+    [OrdenAsignada].[NUM_PED_CIA] AS [NUM_PED_CIA], 
+    [OrdenAsignada].[USUARIO] AS [USUARIO], 
+    [OrdenAsignada].[STATUS] AS [STATUS], 
+    [OrdenAsignada].[MARCA] AS [MARCA], 
+    [OrdenAsignada].[TIPOSURTIDO] AS [TIPOSURTIDO], 
+    [OrdenAsignada].[INICIOSURTIDO] AS [INICIOSURTIDO], 
+    [OrdenAsignada].[TERMINASURTIDO] AS [TERMINASURTIDO], 
+    [OrdenAsignada].[SUBSTATUS1] AS [SUBSTATUS1]
+    FROM [dbo].[OrdenAsignada] AS [OrdenAsignada]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Surtidores" EntityType="Self.Surtidores" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Surtidores].[UsuarioID] AS [UsuarioID], 
+    [Surtidores].[Usuario] AS [Usuario], 
+    [Surtidores].[Contrasena] AS [Contrasena], 
+    [Surtidores].[NombreSurtidor] AS [NombreSurtidor], 
+    [Surtidores].[TipoSurtido] AS [TipoSurtido], 
+    [Surtidores].[NumEmpleado] AS [NumEmpleado], 
+    [Surtidores].[Activo] AS [Activo], 
+    [Surtidores].[ScanerID] AS [ScanerID], 
+    [Surtidores].[AreaID] AS [AreaID]
+    FROM [dbo].[Surtidores] AS [Surtidores]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OperacionesAXModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="NUM_CLIENTE" />
+            <PropertyRef Name="CADENA_DISTRI" />
+          </Key>
+          <Property Name="NUM_CLIENTE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOMBRE_CTE" Type="String" MaxLength="85" FixedLength="false" Unicode="false" />
+          <Property Name="CLAVE_BAJA" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="F_ALTA_CTE" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="F_BAJA_CTE" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="CADENA_DISTRI" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TIPO_CLIENTE" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="TERRITORIO" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="REGION" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="CIUDAD" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="CRED_ALTO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="F_CAPTURA" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="DIMFINA03" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CtlPedidos">
+          <Key>
+            <PropertyRef Name="NUM_ORDEN" />
+            <PropertyRef Name="NUM_PED_CIA" />
+          </Key>
+          <Property Name="CustAccount" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ShipmentId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PurchOrderFormNum" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="OrderNum" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="WorkId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="InventLocationId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SalesStatus" Type="Int32" />
+          <Property Name="createdDateTime" Type="DateTime" Precision="3" />
+          <Property Name="ShippingDateRequested" Type="DateTime" Precision="3" />
+          <Property Name="LiberacionDateTime" Type="DateTime" Precision="3" />
+          <Property Name="WNUM_PED_CTE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="NUM_ORDEN" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NUM_PED_CIA" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NUM_FACTURA" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="FOLIO" Type="Decimal" Precision="6" Scale="0" />
+          <Property Name="NUM_CLIENTE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="F_ENVIO_SURT" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="HORA_SURTIDO" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="ESTADO_PEDIDO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="F_CAPTURA" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="F_PEDIDO" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="F_PROGRAMADA" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="FECHA_I_SUR" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="HORA_I_SUR" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="FECHA_F_SUR" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="HORA_F_SUR" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="F_RECHAZO" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="F_VARIAS_01" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="F_VARIAS_03" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="F_VARIAS_02" Type="Decimal" Precision="8" Scale="0" />
+        </EntityType>
+        <EntityType Name="Det_Orden">
+          <Key>
+            <PropertyRef Name="ORDEN_PROD" />
+          </Key>
+          <Property Name="CustAccount" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="WorkId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="WMSLocationId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ItemId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="QtyWork" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="WorkType" Type="Int32" />
+          <Property Name="WorkStatus" Type="Int32" />
+          <Property Name="NUM_CLIENTE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="NUM_ORDEN" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ORDEN_PROD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UNI_PEDIDAS" Type="Decimal" Precision="6" Scale="0" />
+          <Property Name="UNI_SURTIDA" Type="Decimal" Precision="6" Scale="0" />
+          <Property Name="UNI_SCANEADA" Type="Decimal" Precision="6" Scale="0" />
+          <Property Name="UNI_DIFE" Type="Decimal" Precision="6" Scale="0" />
+          <Property Name="CLAVE_MOVTO" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="CLAVE_BAJA" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Orden_Contenedor">
+          <Key>
+            <PropertyRef Name="ORDEN_CAJA" />
+          </Key>
+          <Property Name="OrdenContenedorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ORDEN_CAJA" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NUM_ORDEN" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CAJAS" Type="Int32" Nullable="false" />
+          <Property Name="SELLO1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SELLO2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CONTENEDOR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CONTENEDORID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PESO_ESTIMADO" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="PESO_REAL" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="TARA" Type="Decimal" Precision="8" Scale="3" />
+        </EntityType>
+        <EntityType Name="ProdAntera">
+          <Key>
+            <PropertyRef Name="NUM_PRODUCTO" />
+          </Key>
+          <Property Name="CIA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PROV" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="LINEA" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="GRUPO" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="TIPO_ALMACEN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SUBGRU" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="SUBGRUPO" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="AGRUP_VTAS" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="BARCODE" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="F_CAPTURA" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="CLAVE_BAJA" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="NUM_PRODUCTO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DESCRIP" Type="String" MaxLength="85" FixedLength="false" Unicode="false" />
+          <Property Name="PRE_FACT_FRO" Type="Decimal" Precision="7" Scale="0" />
+          <Property Name="PRE_PUB_FRO" Type="Decimal" Precision="7" Scale="0" />
+          <Property Name="PRE_FACT" Type="Decimal" Precision="7" Scale="0" />
+          <Property Name="PPUBSIVA" Type="Decimal" Precision="7" Scale="0" />
+          <Property Name="PPUBCIVA" Type="Decimal" Precision="7" Scale="0" />
+          <Property Name="FOB" Type="Decimal" Precision="7" Scale="0" />
+          <Property Name="GTOSIMP" Type="Decimal" Precision="7" Scale="0" />
+          <Property Name="COSTO" Type="Decimal" Precision="7" Scale="0" />
+          <Property Name="DESCON" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="TIPOPROD" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="CODSEGU" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="PESO" Type="Decimal" Precision="7" Scale="0" />
+        </EntityType>
+        <EntityType Name="Control_Cajas">
+          <Key>
+            <PropertyRef Name="NUM_ORDEN" />
+          </Key>
+          <Property Name="NUM_ORDEN" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CAJAS" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="T_CAJAS" Type="Decimal" Precision="4" Scale="0" />
+        </EntityType>
+        <EntityType Name="Control_Imp">
+          <Key>
+            <PropertyRef Name="PUERTO" />
+          </Key>
+          <Property Name="PUERTO" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="NUM_ORDEN" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="CAJAS" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="CAJAS_ANT" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="FLAG_B" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="SELLO1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SELLO2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Det_Error">
+          <Key>
+            <PropertyRef Name="ORDEN_PROD" />
+          </Key>
+          <Property Name="OR_HOJA" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="ORDEN_PROD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NUM_ORDEN" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="NUM_PRODUCTO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SURTIDOR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="USUARIO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PUERTO" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="CLAVE_MOVTO" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="UNI_SCANEADA" Type="Decimal" Precision="6" Scale="0" />
+          <Property Name="F_SURTIDO" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="CAJAS" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="CODIGO_SEC" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Det_Hoja">
+          <Key>
+            <PropertyRef Name="OR_HOJA" />
+          </Key>
+          <Property Name="OR_HOJA" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NUM_ORDEN" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="HOJA" Type="Int32" />
+          <Property Name="FECHA_SUR" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="HORA_I_SUR" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="HORA_F_SUR" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="SURTIDOR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Det_Scaner">
+          <Key>
+            <PropertyRef Name="NUM_ORDEN" />
+            <PropertyRef Name="NUM_PRODUCTO" />
+          </Key>
+          <Property Name="NUM_ORDEN" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BARCODE" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="NUM_PRODUCTO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UNI_SCANEADA" Type="Decimal" Precision="6" Scale="0" />
+          <Property Name="CLAVE_MOVTO" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="CLAVE_BAJA" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="SURTIDOR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="HORA_I_SUR" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="HORA_F_SUR" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="FECHA_SUR" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="HOJA" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="F_SURTIDO" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="HORA_SURTIDO" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="USUARIO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PUERTO" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="CAJAS" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="T_CAJAS" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="CODIGO_SEC" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DetallePedido">
+          <Key>
+            <PropertyRef Name="DetallePedidoId" />
+            <PropertyRef Name="WorkId" />
+            <PropertyRef Name="InventLocationId" />
+            <PropertyRef Name="WMSLocationId" />
+            <PropertyRef Name="ItemId" />
+            <PropertyRef Name="inventBatchId" />
+            <PropertyRef Name="LP" />
+            <PropertyRef Name="NUM_PED_CIA" />
+            <PropertyRef Name="LLAVE_LOC" />
+            <PropertyRef Name="MARCA" />
+          </Key>
+          <Property Name="DetallePedidoId" Type="Int32" Nullable="false" />
+          <Property Name="CustAccount" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ShipmentId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PurchOrderFormNum" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="OrderNum" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="WorkId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InventLocationId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SalesStatus" Type="Int32" />
+          <Property Name="createdDateTime" Type="DateTime" Precision="3" />
+          <Property Name="ShippingDateRequested" Type="DateTime" Precision="3" />
+          <Property Name="LiberacionDateTime" Type="DateTime" Precision="3" />
+          <Property Name="TransDateTime" Type="DateTime" Precision="3" />
+          <Property Name="WMSLocationId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ItemId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="inventBatchId" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="QtyWork" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="WorkType" Type="Int32" />
+          <Property Name="WorkStatus" Type="Int32" />
+          <Property Name="NUM_PED_CIA" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LLAVE_LOC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NUM_PRODUCTO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="UNI_PEDIDAS" Type="Decimal" Precision="6" Scale="0" />
+          <Property Name="UNI_SURTIDA_SUG" Type="Decimal" Precision="6" Scale="0" />
+          <Property Name="UNI_SURTIDA_REAL" Type="Decimal" Precision="6" Scale="0" />
+          <Property Name="CLAVE_MOVTO" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="CLAVE_BAJA" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MARCA" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InicioSesion">
+          <Key>
+            <PropertyRef Name="InicioSesionID" />
+            <PropertyRef Name="UsuarioID" />
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="HoraInicio" />
+            <PropertyRef Name="HoraTermino" />
+            <PropertyRef Name="MinutosDeSesion" />
+          </Key>
+          <Property Name="InicioSesionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UsuarioID" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="HoraInicio" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="HoraTermino" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="MinutosDeSesion" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrdenAsignada">
+          <Key>
+            <PropertyRef Name="FOLIO_ASIGNADO" />
+            <PropertyRef Name="NUM_ORDEN" />
+            <PropertyRef Name="NUM_PED_CIA" />
+            <PropertyRef Name="USUARIO" />
+            <PropertyRef Name="STATUS" />
+            <PropertyRef Name="MARCA" />
+            <PropertyRef Name="TIPOSURTIDO" />
+          </Key>
+          <Property Name="FOLIO_ASIGNADO" Type="Int32" Nullable="false" />
+          <Property Name="NUM_ORDEN" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NUM_PED_CIA" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USUARIO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="STATUS" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MARCA" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TIPOSURTIDO" Type="Decimal" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="INICIOSURTIDO" Type="DateTime" Precision="3" />
+          <Property Name="TERMINASURTIDO" Type="DateTime" Precision="3" />
+          <Property Name="SUBSTATUS1" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Surtidores">
+          <Key>
+            <PropertyRef Name="UsuarioID" />
+            <PropertyRef Name="Usuario" />
+            <PropertyRef Name="Contrasena" />
+            <PropertyRef Name="NombreSurtidor" />
+            <PropertyRef Name="TipoSurtido" />
+          </Key>
+          <Property Name="UsuarioID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Usuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Contrasena" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NombreSurtidor" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TipoSurtido" Type="Int32" Nullable="false" />
+          <Property Name="NumEmpleado" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Activo" Type="Boolean" />
+          <Property Name="ScanerID" Type="Int32" />
+          <Property Name="AreaID" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="OperacionesAXEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clientes" EntityType="Self.Clientes" />
+          <EntitySet Name="CtlPedidos" EntityType="Self.CtlPedidos" />
+          <EntitySet Name="Det_Orden" EntityType="Self.Det_Orden" />
+          <EntitySet Name="Orden_Contenedor" EntityType="Self.Orden_Contenedor" />
+          <EntitySet Name="ProdAntera" EntityType="Self.ProdAntera" />
+          <EntitySet Name="Control_Cajas" EntityType="Self.Control_Cajas" />
+          <EntitySet Name="Control_Imp" EntityType="Self.Control_Imp" />
+          <EntitySet Name="Det_Error" EntityType="Self.Det_Error" />
+          <EntitySet Name="Det_Hoja" EntityType="Self.Det_Hoja" />
+          <EntitySet Name="Det_Scaner" EntityType="Self.Det_Scaner" />
+          <EntitySet Name="DetallePedido" EntityType="Self.DetallePedido" />
+          <EntitySet Name="InicioSesion" EntityType="Self.InicioSesion" />
+          <EntitySet Name="OrdenAsignada" EntityType="Self.OrdenAsignada" />
+          <EntitySet Name="Surtidores" EntityType="Self.Surtidores" />
+          <FunctionImport Name="SumarizaEscaneo">
+            <Parameter Name="NC" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OperacionesAXModelStoreContainer" CdmEntityContainer="OperacionesAXEntities">
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="OperacionesAXModel.Clientes">
+              <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="NUM_CLIENTE" ColumnName="NUM_CLIENTE" />
+                <ScalarProperty Name="NOMBRE_CTE" ColumnName="NOMBRE_CTE" />
+                <ScalarProperty Name="CLAVE_BAJA" ColumnName="CLAVE_BAJA" />
+                <ScalarProperty Name="F_ALTA_CTE" ColumnName="F_ALTA_CTE" />
+                <ScalarProperty Name="F_BAJA_CTE" ColumnName="F_BAJA_CTE" />
+                <ScalarProperty Name="CADENA_DISTRI" ColumnName="CADENA_DISTRI" />
+                <ScalarProperty Name="TIPO_CLIENTE" ColumnName="TIPO_CLIENTE" />
+                <ScalarProperty Name="TERRITORIO" ColumnName="TERRITORIO" />
+                <ScalarProperty Name="REGION" ColumnName="REGION" />
+                <ScalarProperty Name="CIUDAD" ColumnName="CIUDAD" />
+                <ScalarProperty Name="CRED_ALTO" ColumnName="CRED_ALTO" />
+                <ScalarProperty Name="F_CAPTURA" ColumnName="F_CAPTURA" />
+                <ScalarProperty Name="DIMFINA03" ColumnName="DIMFINA03" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CtlPedidos">
+            <EntityTypeMapping TypeName="OperacionesAXModel.CtlPedidos">
+              <MappingFragment StoreEntitySet="CtlPedidos">
+                <ScalarProperty Name="CustAccount" ColumnName="CustAccount" />
+                <ScalarProperty Name="ShipmentId" ColumnName="ShipmentId" />
+                <ScalarProperty Name="PurchOrderFormNum" ColumnName="PurchOrderFormNum" />
+                <ScalarProperty Name="OrderNum" ColumnName="OrderNum" />
+                <ScalarProperty Name="WorkId" ColumnName="WorkId" />
+                <ScalarProperty Name="InventLocationId" ColumnName="InventLocationId" />
+                <ScalarProperty Name="SalesStatus" ColumnName="SalesStatus" />
+                <ScalarProperty Name="createdDateTime" ColumnName="createdDateTime" />
+                <ScalarProperty Name="ShippingDateRequested" ColumnName="ShippingDateRequested" />
+                <ScalarProperty Name="LiberacionDateTime" ColumnName="LiberacionDateTime" />
+                <ScalarProperty Name="WNUM_PED_CTE" ColumnName="WNUM_PED_CTE" />
+                <ScalarProperty Name="NUM_ORDEN" ColumnName="NUM_ORDEN" />
+                <ScalarProperty Name="NUM_PED_CIA" ColumnName="NUM_PED_CIA" />
+                <ScalarProperty Name="NUM_FACTURA" ColumnName="NUM_FACTURA" />
+                <ScalarProperty Name="FOLIO" ColumnName="FOLIO" />
+                <ScalarProperty Name="NUM_CLIENTE" ColumnName="NUM_CLIENTE" />
+                <ScalarProperty Name="F_ENVIO_SURT" ColumnName="F_ENVIO_SURT" />
+                <ScalarProperty Name="HORA_SURTIDO" ColumnName="HORA_SURTIDO" />
+                <ScalarProperty Name="ESTADO_PEDIDO" ColumnName="ESTADO_PEDIDO" />
+                <ScalarProperty Name="F_CAPTURA" ColumnName="F_CAPTURA" />
+                <ScalarProperty Name="F_PEDIDO" ColumnName="F_PEDIDO" />
+                <ScalarProperty Name="F_PROGRAMADA" ColumnName="F_PROGRAMADA" />
+                <ScalarProperty Name="FECHA_I_SUR" ColumnName="FECHA_I_SUR" />
+                <ScalarProperty Name="HORA_I_SUR" ColumnName="HORA_I_SUR" />
+                <ScalarProperty Name="FECHA_F_SUR" ColumnName="FECHA_F_SUR" />
+                <ScalarProperty Name="HORA_F_SUR" ColumnName="HORA_F_SUR" />
+                <ScalarProperty Name="F_RECHAZO" ColumnName="F_RECHAZO" />
+                <ScalarProperty Name="F_VARIAS_01" ColumnName="F_VARIAS_01" />
+                <ScalarProperty Name="F_VARIAS_03" ColumnName="F_VARIAS_03" />
+                <ScalarProperty Name="F_VARIAS_02" ColumnName="F_VARIAS_02" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Det_Orden">
+            <EntityTypeMapping TypeName="OperacionesAXModel.Det_Orden">
+              <MappingFragment StoreEntitySet="Det_Orden">
+                <ScalarProperty Name="CustAccount" ColumnName="CustAccount" />
+                <ScalarProperty Name="WorkId" ColumnName="WorkId" />
+                <ScalarProperty Name="WMSLocationId" ColumnName="WMSLocationId" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="LP" ColumnName="LP" />
+                <ScalarProperty Name="QtyWork" ColumnName="QtyWork" />
+                <ScalarProperty Name="WorkType" ColumnName="WorkType" />
+                <ScalarProperty Name="WorkStatus" ColumnName="WorkStatus" />
+                <ScalarProperty Name="NUM_CLIENTE" ColumnName="NUM_CLIENTE" />
+                <ScalarProperty Name="NUM_ORDEN" ColumnName="NUM_ORDEN" />
+                <ScalarProperty Name="ORDEN_PROD" ColumnName="ORDEN_PROD" />
+                <ScalarProperty Name="UNI_PEDIDAS" ColumnName="UNI_PEDIDAS" />
+                <ScalarProperty Name="UNI_SURTIDA" ColumnName="UNI_SURTIDA" />
+                <ScalarProperty Name="UNI_SCANEADA" ColumnName="UNI_SCANEADA" />
+                <ScalarProperty Name="UNI_DIFE" ColumnName="UNI_DIFE" />
+                <ScalarProperty Name="CLAVE_MOVTO" ColumnName="CLAVE_MOVTO" />
+                <ScalarProperty Name="CLAVE_BAJA" ColumnName="CLAVE_BAJA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orden_Contenedor">
+            <EntityTypeMapping TypeName="OperacionesAXModel.Orden_Contenedor">
+              <MappingFragment StoreEntitySet="Orden_Contenedor">
+                <ScalarProperty Name="OrdenContenedorID" ColumnName="OrdenContenedorID" />
+                <ScalarProperty Name="ORDEN_CAJA" ColumnName="ORDEN_CAJA" />
+                <ScalarProperty Name="NUM_ORDEN" ColumnName="NUM_ORDEN" />
+                <ScalarProperty Name="CAJAS" ColumnName="CAJAS" />
+                <ScalarProperty Name="SELLO1" ColumnName="SELLO1" />
+                <ScalarProperty Name="SELLO2" ColumnName="SELLO2" />
+                <ScalarProperty Name="CONTENEDOR" ColumnName="CONTENEDOR" />
+                <ScalarProperty Name="CONTENEDORID" ColumnName="CONTENEDORID" />
+                <ScalarProperty Name="PESO_ESTIMADO" ColumnName="PESO_ESTIMADO" />
+                <ScalarProperty Name="PESO_REAL" ColumnName="PESO_REAL" />
+                <ScalarProperty Name="TARA" ColumnName="TARA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProdAntera">
+            <EntityTypeMapping TypeName="OperacionesAXModel.ProdAntera">
+              <MappingFragment StoreEntitySet="ProdAntera">
+                <ScalarProperty Name="CIA" ColumnName="CIA" />
+                <ScalarProperty Name="PROV" ColumnName="PROV" />
+                <ScalarProperty Name="LINEA" ColumnName="LINEA" />
+                <ScalarProperty Name="GRUPO" ColumnName="GRUPO" />
+                <ScalarProperty Name="TIPO_ALMACEN" ColumnName="TIPO_ALMACEN" />
+                <ScalarProperty Name="SUBGRU" ColumnName="SUBGRU" />
+                <ScalarProperty Name="SUBGRUPO" ColumnName="SUBGRUPO" />
+                <ScalarProperty Name="AGRUP_VTAS" ColumnName="AGRUP_VTAS" />
+                <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
+                <ScalarProperty Name="F_CAPTURA" ColumnName="F_CAPTURA" />
+                <ScalarProperty Name="CLAVE_BAJA" ColumnName="CLAVE_BAJA" />
+                <ScalarProperty Name="NUM_PRODUCTO" ColumnName="NUM_PRODUCTO" />
+                <ScalarProperty Name="DESCRIP" ColumnName="DESCRIP" />
+                <ScalarProperty Name="PRE_FACT_FRO" ColumnName="PRE_FACT_FRO" />
+                <ScalarProperty Name="PRE_PUB_FRO" ColumnName="PRE_PUB_FRO" />
+                <ScalarProperty Name="PRE_FACT" ColumnName="PRE_FACT" />
+                <ScalarProperty Name="PPUBSIVA" ColumnName="PPUBSIVA" />
+                <ScalarProperty Name="PPUBCIVA" ColumnName="PPUBCIVA" />
+                <ScalarProperty Name="FOB" ColumnName="FOB" />
+                <ScalarProperty Name="GTOSIMP" ColumnName="GTOSIMP" />
+                <ScalarProperty Name="COSTO" ColumnName="COSTO" />
+                <ScalarProperty Name="DESCON" ColumnName="DESCON" />
+                <ScalarProperty Name="TIPOPROD" ColumnName="TIPOPROD" />
+                <ScalarProperty Name="CODSEGU" ColumnName="CODSEGU" />
+                <ScalarProperty Name="PESO" ColumnName="PESO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Control_Cajas">
+            <EntityTypeMapping TypeName="OperacionesAXModel.Control_Cajas">
+              <MappingFragment StoreEntitySet="Control_Cajas">
+                <ScalarProperty Name="NUM_ORDEN" ColumnName="NUM_ORDEN" />
+                <ScalarProperty Name="CAJAS" ColumnName="CAJAS" />
+                <ScalarProperty Name="T_CAJAS" ColumnName="T_CAJAS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Control_Imp">
+            <EntityTypeMapping TypeName="OperacionesAXModel.Control_Imp">
+              <MappingFragment StoreEntitySet="Control_Imp">
+                <ScalarProperty Name="PUERTO" ColumnName="PUERTO" />
+                <ScalarProperty Name="NUM_ORDEN" ColumnName="NUM_ORDEN" />
+                <ScalarProperty Name="CAJAS" ColumnName="CAJAS" />
+                <ScalarProperty Name="CAJAS_ANT" ColumnName="CAJAS_ANT" />
+                <ScalarProperty Name="FLAG_B" ColumnName="FLAG_B" />
+                <ScalarProperty Name="SELLO1" ColumnName="SELLO1" />
+                <ScalarProperty Name="SELLO2" ColumnName="SELLO2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Det_Error">
+            <EntityTypeMapping TypeName="OperacionesAXModel.Det_Error">
+              <MappingFragment StoreEntitySet="Det_Error">
+                <ScalarProperty Name="OR_HOJA" ColumnName="OR_HOJA" />
+                <ScalarProperty Name="ORDEN_PROD" ColumnName="ORDEN_PROD" />
+                <ScalarProperty Name="NUM_ORDEN" ColumnName="NUM_ORDEN" />
+                <ScalarProperty Name="NUM_PRODUCTO" ColumnName="NUM_PRODUCTO" />
+                <ScalarProperty Name="SURTIDOR" ColumnName="SURTIDOR" />
+                <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+                <ScalarProperty Name="PUERTO" ColumnName="PUERTO" />
+                <ScalarProperty Name="CLAVE_MOVTO" ColumnName="CLAVE_MOVTO" />
+                <ScalarProperty Name="UNI_SCANEADA" ColumnName="UNI_SCANEADA" />
+                <ScalarProperty Name="F_SURTIDO" ColumnName="F_SURTIDO" />
+                <ScalarProperty Name="CAJAS" ColumnName="CAJAS" />
+                <ScalarProperty Name="CODIGO_SEC" ColumnName="CODIGO_SEC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Det_Hoja">
+            <EntityTypeMapping TypeName="OperacionesAXModel.Det_Hoja">
+              <MappingFragment StoreEntitySet="Det_Hoja">
+                <ScalarProperty Name="OR_HOJA" ColumnName="OR_HOJA" />
+                <ScalarProperty Name="NUM_ORDEN" ColumnName="NUM_ORDEN" />
+                <ScalarProperty Name="HOJA" ColumnName="HOJA" />
+                <ScalarProperty Name="FECHA_SUR" ColumnName="FECHA_SUR" />
+                <ScalarProperty Name="HORA_I_SUR" ColumnName="HORA_I_SUR" />
+                <ScalarProperty Name="HORA_F_SUR" ColumnName="HORA_F_SUR" />
+                <ScalarProperty Name="SURTIDOR" ColumnName="SURTIDOR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Det_Scaner">
+            <EntityTypeMapping TypeName="OperacionesAXModel.Det_Scaner">
+              <MappingFragment StoreEntitySet="Det_Scaner">
+                <ScalarProperty Name="NUM_ORDEN" ColumnName="NUM_ORDEN" />
+                <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
+                <ScalarProperty Name="NUM_PRODUCTO" ColumnName="NUM_PRODUCTO" />
+                <ScalarProperty Name="UNI_SCANEADA" ColumnName="UNI_SCANEADA" />
+                <ScalarProperty Name="CLAVE_MOVTO" ColumnName="CLAVE_MOVTO" />
+                <ScalarProperty Name="CLAVE_BAJA" ColumnName="CLAVE_BAJA" />
+                <ScalarProperty Name="SURTIDOR" ColumnName="SURTIDOR" />
+                <ScalarProperty Name="HORA_I_SUR" ColumnName="HORA_I_SUR" />
+                <ScalarProperty Name="HORA_F_SUR" ColumnName="HORA_F_SUR" />
+                <ScalarProperty Name="FECHA_SUR" ColumnName="FECHA_SUR" />
+                <ScalarProperty Name="HOJA" ColumnName="HOJA" />
+                <ScalarProperty Name="F_SURTIDO" ColumnName="F_SURTIDO" />
+                <ScalarProperty Name="HORA_SURTIDO" ColumnName="HORA_SURTIDO" />
+                <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+                <ScalarProperty Name="PUERTO" ColumnName="PUERTO" />
+                <ScalarProperty Name="CAJAS" ColumnName="CAJAS" />
+                <ScalarProperty Name="T_CAJAS" ColumnName="T_CAJAS" />
+                <ScalarProperty Name="CODIGO_SEC" ColumnName="CODIGO_SEC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DetallePedido">
+            <EntityTypeMapping TypeName="OperacionesAXModel.DetallePedido">
+              <MappingFragment StoreEntitySet="DetallePedido">
+                <ScalarProperty Name="DetallePedidoId" ColumnName="DetallePedidoId" />
+                <ScalarProperty Name="CustAccount" ColumnName="CustAccount" />
+                <ScalarProperty Name="ShipmentId" ColumnName="ShipmentId" />
+                <ScalarProperty Name="PurchOrderFormNum" ColumnName="PurchOrderFormNum" />
+                <ScalarProperty Name="OrderNum" ColumnName="OrderNum" />
+                <ScalarProperty Name="WorkId" ColumnName="WorkId" />
+                <ScalarProperty Name="InventLocationId" ColumnName="InventLocationId" />
+                <ScalarProperty Name="SalesStatus" ColumnName="SalesStatus" />
+                <ScalarProperty Name="createdDateTime" ColumnName="createdDateTime" />
+                <ScalarProperty Name="ShippingDateRequested" ColumnName="ShippingDateRequested" />
+                <ScalarProperty Name="LiberacionDateTime" ColumnName="LiberacionDateTime" />
+                <ScalarProperty Name="TransDateTime" ColumnName="TransDateTime" />
+                <ScalarProperty Name="WMSLocationId" ColumnName="WMSLocationId" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="inventBatchId" ColumnName="inventBatchId" />
+                <ScalarProperty Name="LP" ColumnName="LP" />
+                <ScalarProperty Name="QtyWork" ColumnName="QtyWork" />
+                <ScalarProperty Name="WorkType" ColumnName="WorkType" />
+                <ScalarProperty Name="WorkStatus" ColumnName="WorkStatus" />
+                <ScalarProperty Name="NUM_PED_CIA" ColumnName="NUM_PED_CIA" />
+                <ScalarProperty Name="LLAVE_LOC" ColumnName="LLAVE_LOC" />
+                <ScalarProperty Name="NUM_PRODUCTO" ColumnName="NUM_PRODUCTO" />
+                <ScalarProperty Name="UNI_PEDIDAS" ColumnName="UNI_PEDIDAS" />
+                <ScalarProperty Name="UNI_SURTIDA_SUG" ColumnName="UNI_SURTIDA_SUG" />
+                <ScalarProperty Name="UNI_SURTIDA_REAL" ColumnName="UNI_SURTIDA_REAL" />
+                <ScalarProperty Name="CLAVE_MOVTO" ColumnName="CLAVE_MOVTO" />
+                <ScalarProperty Name="CLAVE_BAJA" ColumnName="CLAVE_BAJA" />
+                <ScalarProperty Name="MARCA" ColumnName="MARCA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InicioSesion">
+            <EntityTypeMapping TypeName="OperacionesAXModel.InicioSesion">
+              <MappingFragment StoreEntitySet="InicioSesion">
+                <ScalarProperty Name="InicioSesionID" ColumnName="InicioSesionID" />
+                <ScalarProperty Name="UsuarioID" ColumnName="UsuarioID" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="HoraInicio" ColumnName="HoraInicio" />
+                <ScalarProperty Name="HoraTermino" ColumnName="HoraTermino" />
+                <ScalarProperty Name="MinutosDeSesion" ColumnName="MinutosDeSesion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrdenAsignada">
+            <EntityTypeMapping TypeName="OperacionesAXModel.OrdenAsignada">
+              <MappingFragment StoreEntitySet="OrdenAsignada">
+                <ScalarProperty Name="FOLIO_ASIGNADO" ColumnName="FOLIO_ASIGNADO" />
+                <ScalarProperty Name="NUM_ORDEN" ColumnName="NUM_ORDEN" />
+                <ScalarProperty Name="NUM_PED_CIA" ColumnName="NUM_PED_CIA" />
+                <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="MARCA" ColumnName="MARCA" />
+                <ScalarProperty Name="TIPOSURTIDO" ColumnName="TIPOSURTIDO" />
+                <ScalarProperty Name="INICIOSURTIDO" ColumnName="INICIOSURTIDO" />
+                <ScalarProperty Name="TERMINASURTIDO" ColumnName="TERMINASURTIDO" />
+                <ScalarProperty Name="SUBSTATUS1" ColumnName="SUBSTATUS1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Surtidores">
+            <EntityTypeMapping TypeName="OperacionesAXModel.Surtidores">
+              <MappingFragment StoreEntitySet="Surtidores">
+                <ScalarProperty Name="UsuarioID" ColumnName="UsuarioID" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+                <ScalarProperty Name="NombreSurtidor" ColumnName="NombreSurtidor" />
+                <ScalarProperty Name="TipoSurtido" ColumnName="TipoSurtido" />
+                <ScalarProperty Name="NumEmpleado" ColumnName="NumEmpleado" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="ScanerID" ColumnName="ScanerID" />
+                <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SumarizaEscaneo" FunctionName="OperacionesAXModel.Store.SumarizaEscaneo" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

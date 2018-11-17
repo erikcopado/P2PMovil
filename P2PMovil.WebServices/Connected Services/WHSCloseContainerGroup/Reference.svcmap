@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ea5e228a-a97c-4f63-9339-6a97049d75c9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://SRVAOSDYN02:8102/DynamicsAx/Services/WHSCloseContainerGroup" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WHSCloseContainerGroup.xsd" MetadataType="Schema" ID="6595c8c0-663e-4f4b-890d-e9156b6f4ff3" SourceId="1" SourceUrl="http://srvaosdyn02:8102/DynamicsAx/Services/WHSCloseContainerGroup?xsd=xsd0" />
+    <MetadataFile FileName="WHSCloseContainerGroup1.xsd" MetadataType="Schema" ID="d0b20fa9-e2ce-49a3-8ca3-2816003b7b0c" SourceId="1" SourceUrl="http://srvaosdyn02:8102/DynamicsAx/Services/WHSCloseContainerGroup?xsd=xsd3" />
+    <MetadataFile FileName="WHSCloseContainerGroup2.xsd" MetadataType="Schema" ID="ddbca971-deb7-49f5-a61c-b84a92ba9242" SourceId="1" SourceUrl="http://srvaosdyn02:8102/DynamicsAx/Services/WHSCloseContainerGroup?xsd=xsd6" />
+    <MetadataFile FileName="WHSCloseContainerGroup.wsdl" MetadataType="Wsdl" ID="6cc39b32-2b8d-4fb8-a353-ad9d2b5814dc" SourceId="1" SourceUrl="http://srvaosdyn02:8102/DynamicsAx/Services/WHSCloseContainerGroup?wsdl=wsdl0" />
+    <MetadataFile FileName="WHSCloseContainerGroup3.xsd" MetadataType="Schema" ID="dfc25b67-72b9-4781-855b-6db0cdbb27b9" SourceId="1" SourceUrl="http://srvaosdyn02:8102/DynamicsAx/Services/WHSCloseContainerGroup?xsd=xsd4" />
+    <MetadataFile FileName="WHSCloseContainerGroup4.xsd" MetadataType="Schema" ID="53eb3abc-bb48-407c-afe1-35667fb23322" SourceId="1" SourceUrl="http://srvaosdyn02:8102/DynamicsAx/Services/WHSCloseContainerGroup?xsd=xsd5" />
+    <MetadataFile FileName="WHSCloseContainerGroup5.xsd" MetadataType="Schema" ID="a1645044-2669-4e3e-a531-875f6bd52e82" SourceId="1" SourceUrl="http://srvaosdyn02:8102/DynamicsAx/Services/WHSCloseContainerGroup?xsd=xsd1" />
+    <MetadataFile FileName="WHSCloseContainerGroup6.xsd" MetadataType="Schema" ID="cc4accaf-2bb3-474c-a17a-f186152f3223" SourceId="1" SourceUrl="http://srvaosdyn02:8102/DynamicsAx/Services/WHSCloseContainerGroup?xsd=xsd2" />
+    <MetadataFile FileName="WHSCloseContainerGroup1.wsdl" MetadataType="Wsdl" ID="ef982347-1fef-4849-9b27-ada66e577f9d" SourceId="1" SourceUrl="http://srvaosdyn02:8102/DynamicsAx/Services/WHSCloseContainerGroup" />
+    <MetadataFile FileName="WHSCloseContainerGroup7.xsd" MetadataType="Schema" ID="f6d0a9d9-920d-4f52-aa4f-3f651331c97f" SourceId="1" SourceUrl="http://srvaosdyn02:8102/DynamicsAx/Services/WHSCloseContainerGroup?xsd=xsd7" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
